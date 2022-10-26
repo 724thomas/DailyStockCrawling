@@ -16,7 +16,7 @@
 
 <Main>
     <div class="addUrl">
-        <form action="./DoAddUrl" method="get">
+        <form action="./DoCompanyAddServlet" method="get">
             <label for="url-box">URL : ⌨️</label>
             <input type="text" id="url-box" name="url" placeholder="Paste URL..." required>
         </form>

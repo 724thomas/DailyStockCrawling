@@ -46,6 +46,7 @@
           <element id="file-copy" path="$PROJECT_DIR$/../jar/standard.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/../jar/ojdbc6.jar" />
           <element id="file-copy" path="$PROJECT_DIR$/../jar/jstl.jar" />
+          <element id="library" level="project" name="jsoup-1.15.3" />
         </element>
       </element>
     </root>
