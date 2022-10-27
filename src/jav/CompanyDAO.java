@@ -22,7 +22,7 @@ public class CompanyDAO {
     private static final String Company_URL_UPDATE = "update Company set URL = ? where companyName = ?";
     private static final String Company_DELETE = "delete Company where companyname = ?";
 
-    private CompanyDAO() {}
+    CompanyDAO() {}
 
     public static CompanyDAO getInstance() {
         if (companyDAO == null) {
@@ -31,6 +31,24 @@ public class CompanyDAO {
         return companyDAO;
     }
 
+    public boolean checkDuplicate(Company company){
+        try{
+            conn = JDBCMgr.getConnection();
+            stmt = conn.prepareStatement(Company_SELECT_ALL);
+            rs = stmt.executeQuery();
+            if (rs.next()){
+                do{
+                    String companyName = rs.getString("COMPANYNAME");
+                    if (company.getCompanyName().equals(companyName)){
+                        return true;
+                    }
+                }while (rs.next());
+            }
+        } catch (SQLException e) {
+        e.printStackTrace();
+        }
+        return false;
+    }
 
     public Company select(String companyName) {
         Company Company = null;
@@ -42,8 +60,8 @@ public class CompanyDAO {
             rs = stmt.executeQuery();
 
             if (rs.next()) {
-                String UcompanyName = rs.getString("companyName");
-                String Uurl = rs.getString("url");
+                String UcompanyName = rs.getString("COMPANYNAME");
+                String Uurl = rs.getString("URL");
                 Company = new Company(UcompanyName, Uurl);
             }
 
@@ -63,8 +81,8 @@ public class CompanyDAO {
 
             rs = stmt.executeQuery();
             while (rs.next()) {
-                String companyName = rs.getString("companyName");
-                String url = rs.getString("url");
+                String companyName = rs.getString("COMPANYNAME");
+                String url = rs.getString("URL");
                 CompanyList.add(new Company(companyName,url));
             }
 
@@ -97,7 +115,7 @@ public class CompanyDAO {
         try {
             conn = JDBCMgr.getConnection();
             stmt = conn.prepareStatement(Company_URL_UPDATE);
-            stmt.setString(1, "companyName");
+            stmt.setString(1, "COMPANYNAME");
             res = stmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
