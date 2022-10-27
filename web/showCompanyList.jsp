@@ -38,7 +38,7 @@
   <!-- lists 행 개수만큼 반복하면서 레코드 정보 출력 -->
   <div>
     <c:forEach var="company" items="${lists.rows}">
-      <p>${company}</p>
+      <p>${company.COMPANYNAME} : ${company.URL}</p>
     </c:forEach>
   </div>
 

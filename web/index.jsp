@@ -15,7 +15,7 @@
     <%-- JSP 주석 --%>
     <!-- html 주석 -->
     <div>
-        <h1>Static Part 🗿</h1>
+        <h1>🗿 주식 정보 찾기 🗿</h1>
 
 
         <%-- 선언문 (전역변수, 함수 정의) --%>
@@ -32,19 +32,24 @@
         %>
 
         <%-- 표현식 (자바 코드 해설 결과 브라우저에 출력되는 부분)  --%>
-        <h1>Dynamic Part: <%=formatDateTime%> 🚗</h1>
+        <h1> 접속시간 : <%=formatDateTime%> 🚗</h1>
 
         <%-- <%=var%> --%> <%-- 오류 발생 X --%>
         <%--<!-- <%=var%> -->--%> <%-- 오류 발생 O (동적인 요소를 해석할 수 없음 (변수 존재하지 않음) --%>
 
-        <h1>Current FIle: <%=CURRENT_FILE%></h1>
+        <h5> (사용법) </h5>
+        <h6> @ 이 사이트는 찾으려는 회사의 주식 정보를 가져와서 저장한다. (네이버 주식: finance.naver.com) @ </h6>
+        <h6> 1번을 누른 후, 회사를 목록에 추가한다. </h6>
+        <h6> 2번을 누르면 저장되어 있는 회사 목록을 보여준다. </h6>
+        <h6> 3번을 누르면 회사 목록에 있는 회사에 대해서 금일 주식 정보를 가져와서 저장한다. </h6>
+        <h6> 4번을 누르면 전체/회사별 목록을 출력하여 보여준다. </h6>
     </div>
 
     <ul class="main__nav__next">
-        <li>👉<a href="addCompanyAndUrl.jsp"><b>Url로 회사추가로 이동</b></a></li>
-        <li>👉<a href="showCompanyList.jsp"><b>회사 목록으로 이동</b></a></li>
-        <li>👉<a href="addDailyStock.jsp"><b>회사별 주가 반영으로 이동</b></a></li>
-        <li>👉<a href="showDailyStock.jsp"><b>회사별 주가 목록으로 이동</b></a></li>
+        <h5>👉<a href="addCompanyAndUrl.jsp"><b> 1. Url로 회사추가로 이동</b></a></h5>
+        <h5>👉<a href="showCompanyList.jsp"><b> 2. 회사 목록으로 이동</b></a></h5>
+        <h5>👉<a href="addDailyStock.jsp"><b> 3. 회사별 주가 반영으로 이동</b></a></h5>
+        <h5>👉<a href="showDailyStock.jsp"><b> 4. 회사별 주가 목록으로 이동</b></a></h5>
     </ul>
 
 </main>

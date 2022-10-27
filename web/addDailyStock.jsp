@@ -1,4 +1,5 @@
-<%--
+<%@ page import="java.time.format.DateTimeFormatter" %>
+<%@ page import="java.time.LocalDateTime" %><%--
   Created by IntelliJ IDEA.
   User: user
   Date: 2022-10-26
@@ -15,12 +16,17 @@
 <body>
 
 <Main>
-    <div class="addUrl">
-        <form action="./DoAddDailyStockData" method="get">
-            <label for="url-box">URL : ⌨️</label>
-            <input type="text" id="url-box" name="url" placeholder="Paste URL..." required>
-        </form>
+    <div>
+        <ul class="main__nav__next">
+            <%
+                LocalDateTime now = LocalDateTime.now();
+                DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy년 MM월 dd일");
+                String formatDateTime = now.format(format);
+            %>
+            <h1><%=formatDateTime%> 데이터 추가 완료 🚗</h1>
+        </ul>
     </div>
+    <h1>👉🏻<a href="index.jsp"><b>뒤로가기</b></a></h1>
 </Main>
 <div></div>
 <div></div>
