@@ -1,5 +1,7 @@
+import jav.StockCrawling;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        StockCrawling.getCompanyDataFromUrl("https://finance.naver.com/item/main.naver?code=035720");
     }
 }

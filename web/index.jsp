@@ -41,8 +41,10 @@
     </div>
 
     <ul class="main__nav__next">
-        <li>👉<a href="addCompanyAndUrl.jsp"><b>Url 입력으로 이동</b></a></li>
-        <li>👉<a href="showCompanyList.jsp"><b>회사목록으로 이동</b></a></li>
+        <li>👉<a href="addCompanyAndUrl.jsp"><b>Url로 회사추가로 이동</b></a></li>
+        <li>👉<a href="showCompanyList.jsp"><b>회사 목록으로 이동</b></a></li>
+        <li>👉<a href="addDailyStock.jsp"><b>회사별 주가 반영으로 이동</b></a></li>
+        <li>👉<a href="showDailyStock.jsp"><b>회사별 주가 목록으로 이동</b></a></li>
     </ul>
 
 </main>

@@ -11,8 +11,6 @@ import java.io.PrintWriter;
 @WebServlet(name = "DoCompanyAddServlet", value = "/DoCompanyAddServlet")
 public class DoCompanyAddServlet extends HttpServlet {
 
-    static final AddDatabase database = AddDatabase.getInstance();
-
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
         request.setCharacterEncoding("UTF-8");
@@ -20,7 +18,6 @@ public class DoCompanyAddServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         CompanyDAO dao = new CompanyDAO();
-        Company newCompany = new Company();
 
         out.println("<html>");
         out.println("<head>");
@@ -34,11 +31,11 @@ public class DoCompanyAddServlet extends HttpServlet {
         String companyName="";
         if (request.getParameter("url")!=null){
             url = request.getParameter("url");
-            companyName=StockCrawling.getCompanyFromUrl(url);
-            newCompany.setCompanyName(companyName);
-            newCompany.setUrl(url);
+            System.out.println(url);
+            Company newCompany=StockCrawling.getCompanyDataFromUrl(url);
+            companyName=newCompany.getCompanyName();
             out.println("<li>" + companyName + "</li>");
-            if (companyName!="" && dao.checkDuplicate(newCompany)==false){
+            if (!companyName.equals("") && !dao.checkCompanyDuplicate(newCompany)){
                 dao.insert(newCompany);
                 System.out.println("No Duplicates. Inserted Data");
             }else{

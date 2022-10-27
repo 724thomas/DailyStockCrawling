@@ -8,7 +8,6 @@
         </descriptors>
         <webroots>
           <root url="file://$MODULE_DIR$/web" relative="/" />
-          <root url="file://$MODULE_DIR$/src" relative="/WEB-INF/classes" />
         </webroots>
       </configuration>
     </facet>

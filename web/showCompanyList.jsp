@@ -29,10 +29,10 @@
 </header>
 
 <main>
-  <h1>회사명과 해당 주식정보 주소</h1>
+  <h1>회사명과 해당 URL주소</h1>
   <!-- 태그 안에 있는 쿼리문 실행하고 결과 lists 변수에 저장 -->
   <sql:query var="lists" dataSource="${db}">
-    select * from company
+    select distinct COMPANYNAME, URL from company
   </sql:query>
 
   <!-- lists 행 개수만큼 반복하면서 레코드 정보 출력 -->
